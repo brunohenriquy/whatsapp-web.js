@@ -5,7 +5,7 @@ const client = new Client({
     // proxyAuthentication: { username: 'username', password: 'password' },
     puppeteer: { 
         // args: ['--proxy-server=proxy-server-that-requires-authentication.example.com'],
-        headless: true
+        headless: true,
     }
 });
 
@@ -25,8 +25,8 @@ client.on('qr', async (qr) => {
     // paiuting code example
     const pairingCodeEnabled = false;
     if (pairingCodeEnabled && !pairingCodeRequested) {
-        const pairingCode = await client.requestPairingCode("96170100100"); // enter the target phone number
-        console.log("Pairing code enabled, code: "+ pairingCode);
+        const pairingCode = await client.requestPairingCode('96170100100'); // enter the target phone number
+        console.log('Pairing code enabled, code: '+ pairingCode);
         pairingCodeRequested = true;
     }
 });
